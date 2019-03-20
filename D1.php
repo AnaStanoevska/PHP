@@ -32,20 +32,36 @@ echo countSentences($str); /*број на реченици */
 echo "<br/>";
 
 
-$array = print_r(explode(" ",$data));
+print_r(explode(" ",$data));
+
+echo "<br/>";
+
+$test = explode(" ",$data);
+
+echo $test[0]; /*проба */ echo "<br/>";
+echo $test[20]; /*проба */ echo "<br/>";
+echo $test[5]; /*проба */ echo "<br/>";
+
+$lessthen = 0; 
+$morethen = 0;
+$inbetween = 0;
+
+for($i = 0; $i < count($test); $i++) {
+    if(strlen($test[$i]) < 4) {
+        $lessthen++;
+    }
+    if(strlen($test[$i]) > 7) {
+        $morethen++;
+    }
+    if(strlen($test[$i]) > 4 && strlen($test[$i]) < 7) {
+        $inbetween++;
+    }
+}
 
 
-
-if(strlen($array) < 4)
-    echo "less then 4";   
-if(strlen($array) >= 4 && strlen($array) <= 7)
-    echo "between 7 and 4";
-if(strlen($array) > 7)
-    echo "between 7 and 4";
-
-
-
-
+echo "<p>Зборови со помалку од 4 карактери се: $lessthen </p>";
+echo "<p>Зборови со повеќе од 7 карактери се: $morethen </p>";
+echo "<p>Зборови помеѓу 4 и 7 карактери се: $inbetween </p>";
 
 
 
