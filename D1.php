@@ -47,10 +47,10 @@ $morethen = 0;
 $inbetween = 0;
 
 for($i = 0; $i < count($test); $i++) {
-    if(strlen($test[$i]) < 4) {
+    if(strlen($test[$i]) <= 4) {
         $lessthen++;
     }
-    if(strlen($test[$i]) > 7) {
+    if(strlen($test[$i]) >= 7) {
         $morethen++;
     }
     if(strlen($test[$i]) > 4 && strlen($test[$i]) < 7) {
