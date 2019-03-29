@@ -1,13 +1,13 @@
 <?php
-print_r($_FILES['document']);
-$FILETYPES_ALLOWED = ('.txt');
+$file = $_FILES['document'];
+$type = $file["type"];
+$FILETYPES_ALLOWED = ['text/plain'];
 
-if($_FILES['document']['type'] > $FILETYPES_ALLOWED){
-    ;
+if(in_array($_FILES['document']['type'], $FILETYPES_ALLOWED)){
+    print_r($file);
     exit(); // 
-
-
+} else {
+    echo "File type not supported";
+}
 
 ?>
-
-
