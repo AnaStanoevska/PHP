@@ -178,12 +178,12 @@ class Netflix {
 
 public function setNumberOfEpisodes($ep) {
     if(is_int($ep)){
-        $this->umberOfEpisodes = $ep;
+        $this->numberOfEpisodes = $ep;
     }
 }
 
 public function setCountry($G) {
-    $En = ['Love, Death & Robots', 'Dark'];
+    $En = ['USA', 'Germany'];
     if(in_array($G, $En)){
         $this->country = $G;
     }
