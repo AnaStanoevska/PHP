@@ -160,8 +160,57 @@ print_r($h2);
 echo '<br/>';
 
 
+//klasa 3
 
+class Netflix {
+    private $series;
+    private $numberOfEpisodes;
+    private $country;
 
+    public static $German = 'Germany'; 
+    public static $American = 'USA'; 
+    public function __construct($s) {
+        $this->series = $s;
+    }
+    public function __destruct() {
+        echo '<br/>Tv show ' . $this->series . ' is popular on Netflix now';
+    }
+
+public function setNumberOfEpisodes($ep) {
+    if(is_int($ep)){
+        $this->umberOfEpisodes = $ep;
+    }
+}
+
+public function setCountry($G) {
+    $En = ['Love, Death & Robots', 'Dark'];
+    if(in_array($G, $En)){
+        $this->country = $G;
+    }
+}
+
+    public function getSeries() {
+        return $this->series;
+    }
+    public function getNumberOfEpisodes() {
+        return $this->numberOfEpisodes;
+    }
+    public function getCountry() {
+        return $this->country;
+    }
+}
+
+$s1 = new Netflix('Dark');
+$s1->setNumberOfEpisodes(18);
+$s1->setCountry(Netflix::$German); 
+echo '<br/>';
+print_r($s1);
+$s2 = new Netflix('Love, Death & Robots');
+$s2->setNumberOfEpisodes(20);
+$s2->setCountry(Netflix::$American);
+echo '<br/>';
+print_r($s2);
+echo '<br/>';
 
 
 
