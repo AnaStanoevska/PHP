@@ -135,6 +135,71 @@ echo '<br/>';
 
 
 
+// klasa 3 - cvekje
+
+class Flower {
+    private $name;
+    private $color;
+    private $bloomPeriod;
+
+    public function __construct($fn, $fc, $bp) {
+        $this->name = $fn;
+        $this->color = $fc;
+        $this->bloomPeriod = $bp;
+    }
+
+
+public function typeOfFlower() {
+    echo $this->name."is the most beautiful flower of them all. <br/>";
+}
+
+public function setName($fn) {
+    if(is_string($fn)){
+        $this->name = $fn;
+    } else {
+        exit('Name must be string');
+    }
+}
+
+public function getName() {
+    return $this->name;
+}
+
+public function setColor($fc) {
+    if(is_string($fc)){
+        $this->name = $fc;
+    } else {
+        exit('Color must be string');
+    }
+}
+
+public function getColor() {
+    return $this->color;
+}
+
+public function setBloomPeriod($bp) {
+    if(is_string($bp)){
+        $this->name = $bp;
+    } else {
+        exit('Bloom period must be string');
+    }
+}
+
+public function getBloomPeriod() {
+    return $this->bloomPeriod;
+}
+}
+
+
+$F = new Flower('Orchid', 'purple', 'automn');
+$F->setName('Orchid');
+$F->typeOfFlower();
+echo $F->getname();
+echo '<br/>';
+echo $F->getcolor();
+echo '<br/>';
+echo $F->getbloomPeriod();
+echo '<br/>';
 
 
 
