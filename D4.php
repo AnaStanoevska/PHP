@@ -5,6 +5,63 @@
 // абстрактни класи
 // статички особини (properties)
 
+
+//klasa 1 
+
+class GameOfThrones {
+    private $throneHolder;
+    private $family;
+    private $house;
+
+    public static $Stark = 'Stark';
+    public static $Thangarian = 'Thanagarian';
+        public function __construct($g) {
+            $this->throneHolder = $g;
+        }
+
+    public function __destruct() {
+        echo '<br/> ' . $this->throneHolder . ' will sit on the Iron Throne at the end of the series.';
+    }
+
+    public function setFamily($fam) {
+        if(is_string($fam)){
+            $this->family = $fam;
+        }
+    }
+
+    public function setHouse($h) {
+        $me = ['Stark', 'Thangarian'];
+        if(in_array($h, $me)){
+            $this->house = $h;
+        }
+    }
+
+    public function getThroneHolder() {
+        return $this->throneHolder;
+    }
+    public function getFamily() {
+        return $this->family;
+    }
+    public function getHouse() {
+        return $this->house;
+    }
+}
+
+$J = new GameOfThrones('John');
+$J->setFamily('Thangarian');
+$J->setHouse(GameOfThrones::$Stark); 
+echo '<br/>';
+print_r($J);
+$D = new GameOfThrones('Daenerys');
+$D->setFamily('Thangarian');
+$D->setHouse(GameOfThrones::$Thangarian); 
+echo '<br/>';
+print_r($D);
+echo '<br/>';
+
+
+//klasa 2
+
 abstract class Jewelry {
 protected $jewelryMaterial; 
 protected $typeOfJewelry; 
@@ -31,8 +88,8 @@ class Ring extends Jewelry {
         $this->class = $c;
     }
 
-    public function getClasa() {
-        return $this->clasa;
+    public function getClass() {
+        return $this->class;
     }
     public function description() {
         echo 'class: ' . $this->class . ' Material: ' . $this->jewelryMaterial . ' Type: ' . $this->typeOfJewelry;
@@ -46,6 +103,68 @@ $jw->setType('ring');
 $jw->setClass('handmade');
 $jw->description();
 print_r($jw);
+echo '<br/>';
+
+
+//klasa 3
+
+class House {
+    private $type;
+    private $capacity;
+    private $levels;
+
+    public static $Mansion = 'mansion'; 
+    public static $Igloo = 'igloo'; 
+    public function __construct($t) {
+        $this->type = $t;
+    }
+
+    public function __destruct() {
+        echo '<br/>The house ' . $this->type . ' has been closed for visitors';
+    }
+
+    public function setCapacity($c) {
+        if(is_int($c)){
+            $this->capacity = $c;
+        }
+    }
+
+    public function setLevels($l) {
+        $ln = ['igloo', 'mansion'];
+        if(in_array($l, $ln)){
+            $this->levels = $l;
+        }
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+    public function getCapacity() {
+        return $this->capacity;
+    }
+    public function getLevels() {
+        return $this->levels;
+    }
+}
+
+$h1 = new House('h1');
+$h1->setCapacity(2);
+$h1->setLevels(House::$Igloo); 
+echo '<br/>';
+print_r($h1);
+$h2 = new House('h2');
+$h2->setCapacity(20);
+$h2->setLevels(House::$Mansion);
+echo '<br/>';
+print_r($h2);
+echo '<br/>';
+
+
+
+
+
+
+
 
 
 
