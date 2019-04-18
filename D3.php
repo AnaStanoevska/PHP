@@ -191,7 +191,7 @@ public function getBloomPeriod() {
 }
 
 
-$F = new Flower('Orchid', 'purple', 'automn');
+$F = new Flower('Orchid', 'purple', 'autumn');
 $F->setName('Orchid');
 $F->typeOfFlower();
 echo $F->getname();

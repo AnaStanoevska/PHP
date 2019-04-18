@@ -160,7 +160,7 @@ print_r($h2);
 echo '<br/>';
 
 
-//klasa 3
+//klasa 4
 
 class Netflix {
     private $series;
@@ -213,6 +213,52 @@ print_r($s2);
 echo '<br/>';
 
 
+//klasa 5
+
+abstract class Music {
+    protected $band; 
+    protected $song; 
+    
+        public function setBand($mb) {
+            $this->band = $mb;
+        }
+    
+        public function setSong($ms) {
+            $this->song = $ms;
+        }
+    
+        public function getBand() {
+            return $this->band;
+        }
+        public function getSong() {
+            return $this->song;
+        }
+    }
+    
+    class Grange extends Music {
+        private $klasa;
+        public function setKlasa($k) {
+            $this->klasa = $k;
+        }
+    
+        public function getKlasa() {
+            return $this->klasa;
+        }
+        public function description() {
+            echo 'Period: ' . $this->klasa . ' Name of the Band: ' . $this->band . ' Favourite Song: ' . $this->song;
+        }
+    }
+    
+    $gm = new Grange;
+    echo '<br/>';
+    $gm->setBand('Pearl Jam');
+    $gm->setSong('Oceans');
+    $gm->setKlasa('90s Music');
+    $gm->description();
+    print_r($gm);
+    echo '<br/>';
+    
+    
 
 
 
