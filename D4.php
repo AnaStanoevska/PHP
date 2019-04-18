@@ -281,7 +281,7 @@ abstract class Movies {
         }
     }
     
-    class Animated extends Movies {
+    class HorrorMovie extends Movies {
         private $klasa;
         public function setKlasa($k) {
             $this->klasa = $k;
@@ -295,7 +295,7 @@ abstract class Movies {
         }
     }
     
-    $mm = new Animated;
+    $mm = new HorrorMovie;
     echo '<br/>';
     $mm->setMovieName('Alien');
     $mm->setMovieType('horor');
