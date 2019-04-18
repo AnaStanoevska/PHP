@@ -259,7 +259,51 @@ abstract class Music {
     echo '<br/>';
     
     
+//klasa 6
 
+abstract class Movies {
+    protected $movieType; 
+    protected $movieName; 
+    
+        public function setMovieType($mt) {
+            $this->movieType = $mt;
+        }
+    
+        public function setMovieName($mn) {
+            $this->movieName = $mn;
+        }
+    
+        public function getMovieType() {
+            return $this->movieType;
+        }
+        public function getMovieName() {
+            return $this->movieName;
+        }
+    }
+    
+    class Animated extends Movies {
+        private $klasa;
+        public function setKlasa($k) {
+            $this->klasa = $k;
+        }
+    
+        public function getKlasa() {
+            return $this->klasa;
+        }
+        public function description() {
+            echo 'Genre: ' . $this->klasa . ' Movie name: ' . $this->movieName . ' Movie type: ' . $this->movieType;
+        }
+    }
+    
+    $mm = new Animated;
+    echo '<br/>';
+    $mm->setMovieName('Alien');
+    $mm->setMovieType('horor');
+    $mm->setKlasa('Sci-Fi');
+    $mm->description();
+    print_r($mm);
+    echo '<br/>';
+    
 
 
 
