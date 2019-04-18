@@ -305,7 +305,98 @@ abstract class Movies {
     echo '<br/>';
     
 
+//klasa 7
 
+abstract class Architecture {
+    protected $plan; 
+    protected $model; 
+    
+        public function setPlan($ap) {
+            $this->plan = $ap;
+        }
+    
+        public function setModel($am) {
+            $this->model = $am;
+        }
+    
+        public function getPlan() {
+            return $this->plan;
+        }
+        public function getModel() {
+            return $this->model;
+        }
+    }
+    
+    class Profession extends Architecture {
+        private $klasa;
+        public function setKlasa($k) {
+            $this->klasa = $k;
+        }
+    
+        public function getKlasa() {
+            return $this->klasa;
+        }
+        public function description() {
+            echo 'Process: ' . $this->klasa . ' Type of plan: ' . $this->plan . ' Model Material: ' . $this->model;
+        }
+    }
+    
+    $pa = new Profession;
+    echo '<br/>';
+    $pa->setPlan('Floor plan');
+    $pa->setModel('Plexiglass model');
+    $pa->setKlasa('Design');
+    $pa->description();
+    print_r($pa);
+    echo '<br/>';
+    
+
+
+//klasa 8
+
+
+abstract class Cars {
+    protected $brand; 
+    protected $model; 
+    
+        public function setBrand($cb) {
+            $this->brand = $cb;
+        }
+    
+        public function setModel($cm) {
+            $this->model = $cm;
+        }
+    
+        public function getBrand() {
+            return $this->brand;
+        }
+        public function getModel() {
+            return $this->model;
+        }
+    }
+    
+    class Vehicle extends Cars {
+        private $klasa;
+        public function setKlasa($k) {
+            $this->klasa = $k;
+        }
+    
+        public function getKlasa() {
+            return $this->klasa;
+        }
+        public function description() {
+            echo 'Type of vehnicle: ' . $this->klasa . ' Car name: ' . $this->brand . ' Car model: ' . $this->model;
+        }
+    }
+    
+    $veh = new Vehicle;
+    echo '<br/>';
+    $veh->setBrand('Suzuki');
+    $veh->setModel('Jimney');
+    $veh->setKlasa('car');
+    $veh->description();
+    print_r($veh);
+    echo '<br/>';
 
 
 
